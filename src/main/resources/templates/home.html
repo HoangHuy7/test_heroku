@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset = "UTF-8"/>
+    <title>Home</title>
+    <meta http-equiv ="Content-Type"content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Chào mừng mày đên với rạp chiếu phim =))</h1>
+<h3>Tên phim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hình ảnh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chi tiết</h3>
+<ul>
+    <li th:each
+    ="movie : ${listMovie}"><!--Với mỗi phần tử, lấy ra title và detail-->
+    <span th:text ="*{movie.getName()}">            </span> :<span>        <img th:src="*{movie.getImageUrl()}" width="70px" height="80px" alt="ảnh sai"></span>:<span th:text="*{movie.getDescription()}"></span></li></ul>
+<a th:href="@{/addMovie}">muốn thêm phịm bấm zo đây</a>
+</body>
+</html>

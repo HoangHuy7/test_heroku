@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Loda To-do</title>
+    <meta http-equiv="Content-Type"content="text/html; charset=UTF-8"/><!--css-->
+</head>
+<body><h1>Thêm phim đi con dợ</h1>
+<form th:action
+="@{/addMovie}"th:object="${movie}"method="post">
+    <p>title:<input type="text"th:field="*{name}"/></p>
+    <p>imageUrl:<input type="text"th:field="*{imageUrl}"/></p>
+    <p>description:<input type="text"th:field="*{description}"/></p>
+<p><button type="submit">Thêm đi</button></p>
+</form>
+</body>
+</html>
